@@ -5,10 +5,10 @@ Inspired by the code provided by [ifokeev](https://github.com/ifokeev) in this [
 
 The dataset I use is [Titanic from Kaggle](https://www.kaggle.com/c/titanic).
 
-**You should install Ludwig from source code instead of pip install.**\
+**You should install and build Ludwig from source code instead of pip install. My python is 3.6**\
 **I'm new to tensorflow, so if there is something wrong, please tell me, thank you!**
 # Save the tensorflow model as SavedModel format
-Clone the official ludwig project first. I just modified ```/ludwig/models/model.py``` 
+Clone the official ludwig project first. I just modified ```/ludwig/models/model.py```
 I added the following 2 functions between the ```restore``` func and ```load``` func:
 ```
   # ----------------------------------------------- begin -------------------------------------------------#
@@ -66,13 +66,13 @@ And I added the following lines in model.py/train func to all these two function
 
 ## How to get your output_node_names
 Because the output_node_names is a required parameter for freeze_graph.py, we need to find it before training.
-I tried to find the output node from the visualized graph but I fail. I tried to use graph.read() but I got some errors I fail to solve. Therefore, I used the simplest way: print out the output node when training! \
+I tried to find the output node from the visualized graph but I failed. I tried to use graph.read() but I got some errors I could not solve. Therefore, I use the simplest way: print out the output node during the training! \
 1.find the ```batch_evaluation``` func in model.py
 2. print out the output nodes\
-After doing so, you can see the all the output node names. They are in the format of XXX/XXX/XXX:/0(:/0 is not included) However, I find that only one output node name is right so I just ues that one to freeze my graph.
+After doing so, you can see all the output node names. They are in the format of XXX/XXX/XXX:/0 (:/0 is not included). However, I find that only one output node name is right so I just used that name to freeze my graph.
 
 ## Start your training
-Because we have modified the source code, you should install and build Ludwig from source code. You can follow the guide in the official website. Then train with your dataset with the following command: (you can see more examples in the official site)
+Because we have modified the source code, you should install and build Ludwig from source code. You can follow the installation guide in the official website. Then train with your dataset with the following command: (you can see more examples in the official site)
 ```
 ludwig train --data_train_csv gender_submission.csv --data_test_csv test.csv --model_definition_file model_definition.yaml
 ```
