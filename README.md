@@ -3,7 +3,7 @@ The official site is [here](https://uber.github.io/ludwig) and the official gith
 
 Inspired by the code provided by [ifokeev](https://github.com/ifokeev) in this [issue](https://github.com/uber/ludwig/issues/329), I add 2 functions to save the model as SavedModel format and use freeze_graph.py to freeze the model into a .pb file, which can be used in the model deployment.\
 
-The dataset I use is [Titanc from Kaggle](https://www.kaggle.com/c/titanic).
+The dataset I use is [Titanic from Kaggle](https://www.kaggle.com/c/titanic).
 
 **You should install Ludwig from source code instead of pip install.**\
 **I'm new to tensorflow, so if there is something wrong, please tell me, thank you!**
