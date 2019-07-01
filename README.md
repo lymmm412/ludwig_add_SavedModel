@@ -1,9 +1,12 @@
 # ludwig_add_SavedModel
-The official site is [here](https://uber.github.io/ludwig) and the official github repo is [here](https://github.com/uber/ludwig). \
+The official site is [here](https://uber.github.io/ludwig) and the official github repo is [here](https://github.com/uber/ludwig). 
+
 Inspired by the code provided by [ifokeev](https://github.com/ifokeev) in this [issue](https://github.com/uber/ludwig/issues/329), I add 2 functions to save the model as SavedModel format and use freeze_graph.py to freeze the model into a .pb file, which can be used in the model deployment.\
+
 The dataset I use is [Titanc from Kaggle](https://www.kaggle.com/c/titanic).
-#**You should install Ludwig from source code instead of pip install.
-**I'm new to tensorflow, so if there is something wrong, please tell me, thank you!
+
+**You should install Ludwig from source code instead of pip install.**\
+**I'm new to tensorflow, so if there is something wrong, please tell me, thank you!**
 # Save the tensorflow model as SavedModel format
 Clone the official ludwig project first. I just modified ```/ludwig/models/model.py``` 
 I added the following 2 functions between the ```restore``` func and ```load``` func:
@@ -51,7 +54,7 @@ And I added the following lines in model.py/train func to all these two function
         model_dir =os.path.join('results',dir_list[-1])+'/model' # the model_dir is inside the current experiment_run_num/model folder
         self.saved_model(model_dir)
  ```
- The structure of SavedMode is like:
+ The structure of SavedModel is like:
  ```
  ---saved_model
     ---variables
