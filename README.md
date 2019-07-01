@@ -62,7 +62,7 @@ And I added the following lines in model.py/train func to all these two function
         ---variables.index
     ---saved_model.pb
  ```
-**If my description is not clear to you, you can check these two files I uploaded and search for the function ```saved_model```**
+**If my description is not clear to you, you can check the file I uploaded and search for the function ```saved_model```**
 
 ## How to get your output_node_names
 Because the output_node_names is a required parameter for freeze_graph.py, we need to find it before training.
